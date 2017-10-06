@@ -85,7 +85,7 @@ Ext.define('FirstAppSencha.view.main.Main', {
         }]
     }, {
         title: 'User Interface',
-        iconCls: 'fa-hand-paper-o',
+        iconCls: 'x-fa fa-home',
         bind: {
             html: '{loremIpsum}'
         }
