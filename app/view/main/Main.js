@@ -15,7 +15,8 @@ Ext.define('FirstAppSencha.view.main.Main', {
 
         'FirstAppSencha.view.main.MainController',
         'FirstAppSencha.view.main.MainModel',
-        'FirstAppSencha.view.main.List'
+        'FirstAppSencha.view.main.List',
+        'FirstAppSencha.view.userView.UserView'
     ],
 
     controller: 'main',
@@ -37,7 +38,7 @@ Ext.define('FirstAppSencha.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-shield'
     },
 
     tabBar: {
@@ -76,27 +77,27 @@ Ext.define('FirstAppSencha.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+        title: 'Creación de usuario',
+        iconCls: 'fa-user',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'userView'
         }]
     }, {
-        title: 'Users',
-        iconCls: 'fa-user',
+        title: 'User Interface',
+        iconCls: 'fa-hand-paper-o',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Groups',
+        title: 'Usuarios',
         iconCls: 'fa-users',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
+        title: 'Ver usuario',
+        iconCls: 'fa-home',
         bind: {
             html: '{loremIpsum}'
         }
