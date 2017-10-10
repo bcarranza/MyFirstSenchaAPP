@@ -18,12 +18,10 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
         align: 'stretch'
     },
     flex: 1,
-    items: [{
+    items: [
+    {
         xtype: 'form',
         reference: 'codeForm',
-        align: 'stretch'
-    },
-    {
         title: 'Busqueda de usuario',
         flex: 1, 
         layout: {
@@ -32,6 +30,7 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
         },
         items: [{
             fieldLabel: 'Código de usuario',
+            name: 'codigo',
             xtype: 'numberfield',
             minValue: 0,
             required: true,
@@ -55,6 +54,7 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
         items: [{
             xtype: 'form',
             title: 'Datos personales',
+            reference: 'personalData',
             layout: {
                 type: 'vbox',
                 align: 'stretch '
@@ -66,6 +66,7 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
             },
             items: [{
                 xtype: 'textfield',
+                name: 'nombre',
                 fieldLabel: 'Nombre',
                 required:true,
                 allowBlank: false
@@ -73,22 +74,27 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
             {
                 xtype: 'textfield',
                 fieldLabel: 'Apellido',
+                name: 'apellido',
                 required:true,
                 allowBlank: false
             },
              {
                 xtype: 'numberfield',
                 fieldLabel: 'Edad',
+                name: 'edad',
                 minValue: 0
             },
             {
                 xtype: 'datefield',
                 fieldLabel: 'Fecha nacimiento',
+                name: 'fechaNac',
+                format: 'm/d/Y',
                 requiered: true,
                 allowBlank: false
             },
             {
                 xtype: 'textfield',
+                name:'direccion',
                 fieldLabel: 'Dirección',
                 requiered: false,
                 allowBlank: true
@@ -97,6 +103,7 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
         }, {
             xtype: 'form',
             title: 'Datos empresariales',
+            reference: 'businessData',
             flex: 1,
             layout: {
                 type: 'vbox',
@@ -109,12 +116,21 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
             items: [{
                 xtype: 'textfield',
                 fieldLabel: 'Nombre de la empresa',
+                name: 'nombreEmp',
                 required: true,
                 allowBlank: false
             },
         {
                 xtype: 'textfield',
                 fieldLabel: 'Dirección de la empresa',
+                name:'direccionEmp',
+                required: true,
+                allowBlank: false
+            },
+            {
+                xtype: 'textfield',
+                fieldLabel: 'Número de telefono',
+                name:'numeroTelEmp',
                 required: true,
                 allowBlank: false
             }]
@@ -125,6 +141,7 @@ Ext.define('FirstAppSencha.view.userView.UserView',{
             xtype: 'button',
             text: 'Guardar',
             flex: 1,
-            margin: '10px'
+            margin: '10px',
+            handler: 'saveUser'
     }]
 });
